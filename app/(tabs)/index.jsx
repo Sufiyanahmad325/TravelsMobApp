@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { useHeaderHeight } from '@react-navigation/elements'
 import CategoryButton from '../../components/screen/CategoryButton'
 import Listings from '../../components/screen/Listings'
+import GroupListing from '../../components/screen/GroupListing'
 
 const page = () => {
   const headerHeight = useHeaderHeight();
@@ -64,8 +65,9 @@ const page = () => {
         </View>
 
 
-        <CategoryButton onCatChanged={onCatChanged}/>
-        <Listings />
+        <CategoryButton onCatChanged={onCatChanged} />
+        <Listings category={category} />
+        <GroupListing />
 
 
       </View>

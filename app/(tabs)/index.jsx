@@ -1,13 +1,21 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors'
 import { Stack } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 import { useHeaderHeight } from '@react-navigation/elements'
 import CategoryButton from '../../components/screen/CategoryButton'
+import Listings from '../../components/screen/Listings'
 
 const page = () => {
   const headerHeight = useHeaderHeight();
+  const [category, setCategory] = useState('All')
+
+  const onCatChanged =(category)=>{
+      setCategory(category)
+      console.log(category);
+  }
+
   return (
     <>
       <Stack.Screen options={{
@@ -56,7 +64,8 @@ const page = () => {
         </View>
 
 
-        <CategoryButton />
+        <CategoryButton onCatChanged={onCatChanged}/>
+        <Listings />
 
 
       </View>

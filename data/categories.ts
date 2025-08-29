@@ -8,8 +8,8 @@ export let  destinationCategories = [
     iconName: "beach",
   },
   {
-    title: "Mountain",
-    iconName: "mountain",
+    title: "Space",
+    iconName: "space-station",
   },
 
   {

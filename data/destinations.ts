@@ -1,0 +1,202 @@
+export const  destinations = [
+    {
+      "id": 1,
+      "name": "Tropical Paradise Resort",
+      "image": "https://images.pexels.com/photos/29421973/pexels-photo-29421973.jpeg",
+      "description": "Experience the ultimate tropical getaway at our luxurious resort, where pristine beaches meet lush greenery and world-class amenities.",
+      "rating": 4.8,
+      "duration": "3 Days",
+      "location": "Pacific Ocean",
+      "category": "Beaches"
+    },
+    // {
+    //   "id": 2,
+    //   "name": "Alpine Ski Lodge",
+    //   "image": "https://images.pexels.com/photos/887870/pexels-photo-887870.jpeg",
+    //   "description": "Hit the slopes and then relax by the fire in our cozy ski lodge, nestled in the heart of the snow-capped mountains.",
+    //   "rating": 4.6,
+    //   "duration": "5 Days",
+    //   "location": "Swiss Alps",
+    //   "category": "Skiing"
+    // },
+    // {
+    //   "id": 3,
+    //   "name": "Sahara Desert Safari",
+    //   "image": "https://images.pexels.com/photos/1703312/pexels-photo-1703312.jpeg",
+    //   "description": "Embark on an unforgettable journey through the vast, golden dunes of the Sahara, complete with camel rides and starlit nights.",
+    //   "rating": 4.9,
+    //   "duration": "4 Days",
+    //   "location": "Morocco",
+    //   "category": "Adventure"
+    // },
+    // {
+    //   "id": 4,
+    //   "name": "Historic European City Tour",
+    //   "image": "https://images.pexels.com/photos/3831085/pexels-photo-3831085.jpeg",
+    //   "description": "Wander through cobblestone streets and discover ancient castles, cathedrals, and vibrant culture in Europe's most charming cities.",
+    //   "rating": 4.7,
+    //   "duration": "7 Days",
+    //   "location": "Rome, Italy",
+    //   "category": "Cultural"
+    // },
+    // {
+    //   "id": 5,
+    //   "name": "Amazon Rainforest Expedition",
+    //   "image": "https://images.pexels.com/photos/4835354/pexels-photo-4835354.jpeg",
+    //   "description": "Delve deep into the world's largest rainforest, spotting exotic wildlife and learning about the rich biodiversity of the Amazon.",
+    //   "rating": 4.5,
+    //   "duration": "6 Days",
+    //   "location": "Brazil",
+    //   "category": "Nature"
+    // },
+    // {
+    //   "id": 6,
+    //   "name": "Bora Bora Overwater Bungalows",
+    //   "image": "https://images.pexels.com/photos/13828643/pexels-photo-13828643.jpeg",
+    //   "description": "Wake up to the sound of waves in your private bungalow, surrounded by turquoise water and breathtaking mountain views.",
+    //   "rating": 4.9,
+    //   "duration": "5 Days",
+    //   "location": "French Polynesia",
+    //   "category": "Beaches"
+    // },
+    // {
+    //   "id": 7,
+    //   "name": "Kyoto Temple & Gardens Tour",
+    //   "image": "https://images.pexels.com/photos/29241333/pexels-photo-29241333.jpeg",
+    //   "description": "Immerse yourself in Japanese tradition with a tour of ancient temples, serene gardens, and traditional tea ceremonies in Kyoto.",
+    //   "rating": 4.8,
+    //   "duration": "4 Days",
+    //   "location": "Japan",
+    //   "category": "Cultural"
+    // },
+    // {
+    //   "id": 8,
+    //   "name": "Great Barrier Reef Scuba Diving",
+    //   "image": "hhttps://images.pexels.com/photos/7863208/pexels-photo-7863208.jpeg",
+    //   "description": "Dive into the vibrant underwater world of the Great Barrier Reef, home to thousands of species of colorful fish and coral.",
+    //   "rating": 4.7,
+    //   "duration": "3 Days",
+    //   "location": "Australia",
+    //   "category": "Adventure"
+    // },
+    // {
+    //   "id": 9,
+    //   "name": "Machu Picchu Trek",
+    //   "image": "https://images.pexels.com/photos/18662534/pexels-photo-18662534.jpeg",
+    //   "description": "Hike the ancient Inca trail to the breathtaking lost city of Machu Picchu, a UNESCO World Heritage site.",
+    //   "rating": 5.0,
+    //   "duration": "7 Days",
+    //   "location": "Peru",
+    //   "category": "Hiking"
+    // },
+    // {
+    //   "id": 10,
+    //   "name": "Iceland Northern Lights Chase",
+    //   "image": "https://images.pexels.com/photos/28304723/pexels-photo-28304723.jpeg",
+    //   "description": "Witness the spectacular celestial dance of the Northern Lights while exploring the stunning landscapes of Iceland.",
+    //   "rating": 4.9,
+    //   "duration": "6 Days",
+    //   "location": "Iceland",
+    //   "category": "Nature"
+    // },
+    // {
+    //   "id": 11,
+    //   "name": "Santorini Sunset Cruise",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Sail the Aegean Sea and watch the sun set over the iconic white-washed villages of Santorini.",
+    //   "rating": 4.8,
+    //   "duration": "2 Days",
+    //   "location": "Greece",
+    //   "category": "Beaches"
+    // },
+    // {
+    //   "id": 12,
+    //   "name": "Patagonia Glacier Trek",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Explore the majestic Perito Moreno Glacier, hiking on the ice and witnessing its dramatic calving.",
+    //   "rating": 4.7,
+    //   "duration": "5 Days",
+    //   "location": "Argentina",
+    //   "category": "Hiking"
+    // },
+    // {
+    //   "id": 13,
+    //   "name": "Serengeti Wildlife Safari",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Go on a thrilling safari adventure in the Serengeti, home to the 'Big Five' and the Great Migration.",
+    //   "rating": 4.9,
+    //   "duration": "8 Days",
+    //   "location": "Tanzania",
+    //   "category": "Wildlife"
+    // },
+    // {
+    //   "id": 14,
+    //   "name": "Venice Gondola & Canal Tour",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Float through the romantic canals of Venice in a traditional gondola, passing by historic palaces and bridges.",
+    //   "rating": 4.6,
+    //   "duration": "3 Days",
+    //   "location": "Italy",
+    //   "category": "Cultural"
+    // },
+    // {
+    //   "id": 15,
+    //   "name": "New Zealand Road Trip",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Drive through the breathtaking landscapes of New Zealand, from rugged mountains to pristine lakes and lush forests.",
+    //   "rating": 4.8,
+    //   "duration": "10 Days",
+    //   "location": "New Zealand",
+    //   "category": "Adventure"
+    // },
+    // {
+    //   "id": 16,
+    //   "name": "Swiss Chocolate & Cheese Tour",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Indulge in the finest Swiss delicacies, visiting artisan chocolatiers and traditional cheese factories.",
+    //   "rating": 4.7,
+    //   "duration": "3 Days",
+    //   "location": "Switzerland",
+    //   "category": "Food"
+    // },
+    // {
+    //   "id": 17,
+    //   "name": "Banff National Park Hiking",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Hike through the majestic Canadian Rockies, with stunning views of turquoise lakes, glaciers, and mountain peaks.",
+    //   "rating": 4.9,
+    //   "duration": "4 Days",
+    //   "location": "Canada",
+    //   "category": "Hiking"
+    // },
+    // {
+    //   "id": 18,
+    //   "name": "Egyptian Pyramids & Nile Cruise",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Journey back in time to ancient Egypt, exploring the Great Pyramids and cruising down the legendary Nile River.",
+    //   "rating": 4.8,
+    //   "duration": "7 Days",
+    //   "location": "Egypt",
+    //   "category": "Cultural"
+    // },
+    // {
+    //   "id": 19,
+    //   "name": "Galapagos Islands Wildlife",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Encounter unique and fearless wildlife, including giant tortoises and marine iguanas, in the world's most pristine archipelago.",
+    //   "rating": 5.0,
+    //   "duration": "5 Days",
+    //   "location": "Ecuador",
+    //   "category": "Wildlife"
+    // },
+    // {
+    //   "id": 20,
+    //   "name": "Paris Romantic Getaway",
+    //   "image": "https://images.unsplash.com/photo-1549924976-574d75d5069b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "description": "Stroll along the Seine, visit the Eiffel Tower, and enjoy world-class cuisine in the City of Love.",
+    //   "rating": 4.9,
+    //   "duration": "4 Days",
+    //   "location": "France",
+    //   "category": "Cultural"
+    // }
+  ]

@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 2 },
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: '700',
     color: Colors.black,
     marginBottom: 10,

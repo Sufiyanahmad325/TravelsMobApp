@@ -33,6 +33,7 @@ const RootLayout = () => {
           tabBarIcon: ({ color }) => (
             <MaterialIcons name="space-dashboard" size={24} color={color} />
           ),
+            headerShown: false,
         }}
       />
 

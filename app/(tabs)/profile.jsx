@@ -36,10 +36,7 @@ const Profile = () => {
             <Text style={styles.statNumber}>20</Text>
             <Text style={styles.statLabel}>Wishlist</Text>
           </View>
-          <View style={styles.statBox}>
-            <Text style={styles.statNumber}>5.6k</Text>
-            <Text style={styles.statLabel}>Followers</Text>
-          </View>
+         
         </View>
 
         {/* Action Buttons */}

@@ -1,14 +1,12 @@
 import React from "react";
-import {StyleSheet,Text,View,Image,TouchableOpacity,ScrollView,} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, } from "react-native";
 import { Ionicons, MaterialIcons, Feather } from "@expo/vector-icons";
-import { useHeaderHeight } from "@react-navigation/elements";
 import { SafeAreaView } from "react-native-safe-area-context";
+import {  router } from "expo-router";
 
 const Profile = () => {
-  const headerHeight = useHeaderHeight();
-  console.log(headerHeight);
   return (
-    <SafeAreaView edges={['top']} style={{ flex: 1, paddingTop: headerHeight, backgroundColor: "#fff" }}>
+    <SafeAreaView edges={['top']} style={{ flex: 1,  backgroundColor: "#fff" }}>
       <ScrollView style={[styles.container, { marginTop: 0 }]}>
         {/* Profile Header */}
         <View style={styles.header}>
@@ -36,7 +34,7 @@ const Profile = () => {
             <Text style={styles.statNumber}>20</Text>
             <Text style={styles.statLabel}>Wishlist</Text>
           </View>
-         
+
         </View>
 
         {/* Action Buttons */}
@@ -55,9 +53,10 @@ const Profile = () => {
 
           <TouchableOpacity
             style={[styles.button, { backgroundColor: "#ff9800" }]}
+            onPress={() => router.push("/(tabs)/bookmarks")}
           >
-            <MaterialIcons name="share" size={18} color="#fff" />
-            <Text style={styles.buttonText}>Share</Text>
+            <MaterialIcons name="bookmark-outline" size={18} color="#fff" />
+            <Text style={styles.buttonText}>Save</Text>
           </TouchableOpacity>
         </View>
 

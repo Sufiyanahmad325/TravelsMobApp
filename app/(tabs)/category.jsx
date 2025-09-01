@@ -16,16 +16,17 @@ const groupByCategory = () => {
   return Object.keys(groups).map((category) => (
     {
       title: category,
-      data: groups[category]
+      data: groups[category]  // kya mai data ka name change kr sakta hu
     }
   ))
 
 };
 
+
+
+
 const Category = () => {
   const sections = groupByCategory();
-
-
 
   const renderCard = ({ item }) => (
    <>

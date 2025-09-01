@@ -12,6 +12,11 @@ export const travelsInfoContext = createContext();
 
 export default function RootLayout() {
   const [savetrips, setSavetrips] = useState([]);
+  const [profileDetails , setProfileDetails] = useState({
+    name: "John Traveler",
+    bio: "🌍 Globe Trotter | 📸 Travel Blogger | ✈️ Adventure Seeker",
+    avatar: "https://i.pravatar.cc/200?img=32",
+  });
 
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
@@ -21,7 +26,7 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
-    <travelsInfoContext.Provider value={{ savetrips, setSavetrips }}>
+    <travelsInfoContext.Provider value={{ savetrips, setSavetrips , profileDetails , setProfileDetails }}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -67,6 +72,9 @@ export default function RootLayout() {
               };
             }}
           />
+
+          <Stack.Screen name="screen/editProfile" options={{ headerShown: false }} />
+
 
 
         </Stack>

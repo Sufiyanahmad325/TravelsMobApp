@@ -4,9 +4,9 @@ import { Colors } from '@/constants/Colors'
 import { Stack } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 import { useHeaderHeight } from '@react-navigation/elements'
-import CategoryButton from '../../components/screen/CategoryButton'
-import Listings from '../../components/screen/Listings'
-import TopAgencyList from '../../components/screen/TopAgencyList'
+import CategoryButton from '../component/CategoryButton'
+import Listings from '../component/Listings'
+import TopAgencyList from '../component/TopAgencyList'
 
 const page = () => {
   const headerHeight = useHeaderHeight();

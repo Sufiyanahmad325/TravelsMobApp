@@ -11,6 +11,7 @@ import { travelsInfoContext } from "../_layout";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import { destinations } from "../../data/destinations";
+import { router } from "expo-router";
 
 const Bookmarks = () => {
   const { savetrips, setSavetrips } = useContext(travelsInfoContext);
@@ -24,7 +25,9 @@ const Bookmarks = () => {
     if (!trip) return null;
 
     return (
-      <View style={styles.card}>
+
+     <TouchableOpacity onPress={() =>{router.push({pathname:'listing/listDetails' , params:{item:JSON.stringify(trip)}})} }>
+       <View style={styles.card}>
         {/* Image */}
         <Image source={{ uri: trip.image }} style={styles.image} />
 
@@ -58,6 +61,7 @@ const Bookmarks = () => {
           <Ionicons name="trash-outline" size={22} color={Colors.black} />
         </TouchableOpacity>
       </View>
+     </TouchableOpacity>
     );
   };
 

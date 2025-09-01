@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, SectionList } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { destinations } from "../../data/destinations";
+import { router } from "expo-router";
 
 const groupByCategory = () => {
   const groups = {};
@@ -30,7 +31,7 @@ const Category = () => {
 
   const renderCard = ({ item }) => (
    <>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={() =>{router.push({pathname:'listing/listDetails' , params:{item:JSON.stringify(item)}})} }>
       {/* Destination image */}
       <Image source={{ uri: item.image }} style={styles.cardImage} />
 

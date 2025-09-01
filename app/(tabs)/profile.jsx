@@ -1,22 +1,25 @@
-import React from "react";
+import React, { use, useContext } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, } from "react-native";
 import { Ionicons, MaterialIcons, Feather } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {  router } from "expo-router";
+import { travelsInfoContext } from "../_layout";
+
 
 const Profile = () => {
+  const {profileDetails, setProfileDetails} = useContext(travelsInfoContext);
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1,  backgroundColor: "#fff" }}>
       <ScrollView style={[styles.container, { marginTop: 0 }]}>
         {/* Profile Header */}
         <View style={styles.header}>
           <Image
-            source={{ uri: "https://i.pravatar.cc/200?img=32" }}
+            source={{ uri:profileDetails.avatar }}
             style={styles.avatar}
           />
-          <Text style={styles.name}>John Traveler</Text>
+          <Text style={styles.name}>{profileDetails.name}</Text>
           <Text style={styles.bio}>
-            🌍 Globe Trotter | 📸 Travel Blogger | ✈️ Adventure Seeker
+            {profileDetails.bio}
           </Text>
         </View>
 
@@ -39,7 +42,7 @@ const Profile = () => {
 
         {/* Action Buttons */}
         <View style={styles.actions}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity onPress={()=>router.push('screen/editProfile')} style={styles.button}>
             <Ionicons name="create-outline" size={18} color="#fff" />
             <Text style={styles.buttonText}>Edit Profile</Text>
           </TouchableOpacity>
@@ -162,10 +165,12 @@ const Profile = () => {
             <Ionicons name="settings-outline" size={20} color="#555" />
             <Text style={styles.optionText}>Settings</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.optionItem}>
+
+          <TouchableOpacity onPress={()=>router.push('(tabs)/bookmarks')} style={styles.optionItem}>
             <MaterialIcons name="bookmark-border" size={20} color="#555" />
             <Text style={styles.optionText}>Saved Places</Text>
           </TouchableOpacity>
+
           <TouchableOpacity style={styles.optionItem}>
             <Ionicons name="log-out-outline" size={20} color="red" />
             <Text style={[styles.optionText, { color: "red" }]}>Logout</Text>

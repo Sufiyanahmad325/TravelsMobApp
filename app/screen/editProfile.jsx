@@ -4,6 +4,11 @@ import { travelsInfoContext } from "../_layout"; // adjust path if needed
 import { Colors } from "@/constants/Colors";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import * as ImagePicker from "expo-image-picker";
+
+
+
+
 
 const EditProfile = () => {
   const { profileDetails, setProfileDetails } = useContext(travelsInfoContext);
@@ -17,12 +22,49 @@ const EditProfile = () => {
     setProfileDetails({ name, bio, avatar });
     router.back(); // go back to profile page
   };
+
+
+  const pickImage = async () => {
+    // permission for gallery
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (status !== "granted") {
+      alert("Permission denied! You need to allow access to gallery.");
+      return;
+    }
+  
+    // open gallery
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1], // square crop
+      quality: 1,
+    });
+  
+    if (!result.canceled) {
+      console.log('this is your data ============> ' + result.assets[0].uri);
+      // setProfileDetails(prev=>({...prev , avatar}));  // save image uri in state
+      setAvatar(result.assets[0].uri)
+    }
+  };
+
+
+
+  
+
+
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
       <Text style={styles.header}>Edit Profile</Text>
 
       {/* Avatar Preview */}
-      <Image source={{ uri: avatar }} style={styles.avatar} />
+    <View style={{ alignItems: "center", marginBottom: 20 }}>
+    <Image source={{ uri: avatar }} style={styles.avatar} />
+      {/* Pick Image Button */}
+      <TouchableOpacity onPress={pickImage} style={styles.pickBtn}>
+        <Text style={styles.pickBtnText}>Choose from Gallery</Text>
+      </TouchableOpacity>
+    </View>
+
 
       {/* Avatar Input */}
       <Text style={styles.label}>Avatar URL</Text>
@@ -53,7 +95,7 @@ const EditProfile = () => {
       />
 
       {/* Save Button */}
-      <TouchableOpacity style={styles.saveBtn} onPress={handleSave}>
+      <TouchableOpacity  style={styles.saveBtn} onPress={handleSave}>
         <Text style={styles.saveBtnText}>Save Changes</Text>
       </TouchableOpacity>
     </SafeAreaView>

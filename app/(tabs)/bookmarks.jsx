@@ -26,7 +26,7 @@ const Bookmarks = () => {
 
     return (
 
-     <TouchableOpacity onPress={() =>{router.push({pathname:'listing/listDetails' , params:{item:JSON.stringify(trip)}})} }>
+     <TouchableOpacity onPress={() =>{router.push({pathname:'screen/listDetails' , params:{item:JSON.stringify(trip)}})} }>
        <View style={styles.card}>
         {/* Image */}
         <Image source={{ uri: trip.image }} style={styles.image} />

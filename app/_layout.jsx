@@ -33,7 +33,7 @@ export default function RootLayout() {
 
           {/* ListingDetails with Transparent Custom Header */}
           <Stack.Screen
-            name="listing/listDetails"
+            name="screen/listDetails"
             options={({ route }) => {
               const { item } = route.params || {}; // yaha se item aa rha hai
               const parsedItem = item ? JSON.parse(item) : null;

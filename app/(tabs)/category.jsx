@@ -31,7 +31,7 @@ const Category = () => {
 
   const renderCard = ({ item }) => (
    <>
-    <TouchableOpacity style={styles.card} onPress={() =>{router.push({pathname:'listing/listDetails' , params:{item:JSON.stringify(item)}})} }>
+    <TouchableOpacity style={styles.card} onPress={() =>{router.push({pathname:'screen/listDetails' , params:{item:JSON.stringify(item)}})} }>
       {/* Destination image */}
       <Image source={{ uri: item.image }} style={styles.cardImage} />
 

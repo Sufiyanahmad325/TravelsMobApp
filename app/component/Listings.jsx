@@ -8,7 +8,7 @@ import { Link } from 'expo-router'
 
 const ListItem = ({ item }) => {
   return (
-    <Link href={{ pathname: 'listing/listDetails', params: { item: JSON.stringify(item) } }} asChild>
+    <Link href={{ pathname: 'screen/listDetails', params: { item: JSON.stringify(item) } }} asChild>
       <TouchableOpacity>
         <View style={styles.item}>
           <Image source={{ uri: item.image }} style={styles.image} />

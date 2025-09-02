@@ -71,6 +71,9 @@ export default function RootLayout() {
                         if(!isAllreadySaved){
                           setSavetripsId(prev => [...prev, parsedItem.id])
                         }
+                        else{
+                          setSavetripsId(prev=>prev.filter(id=>id != parsedItem.id) )
+                        }
                        }}
                     >
                       <Ionicons

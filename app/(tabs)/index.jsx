@@ -14,7 +14,6 @@ const page = () => {
 
   const onCatChanged =(category)=>{
       setCategory(category)
-      console.log(category);
   }
 
   return (

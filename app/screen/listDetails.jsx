@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { useLocalSearchParams } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
+import { travelsInfoContext } from "../_layout";
 
 const ListingDetails = () => {
   const { item } = useLocalSearchParams();
   const parsedItem = JSON.parse(item); // string → object
-
+  
   return (
     <>
       <View style={styles.container}>

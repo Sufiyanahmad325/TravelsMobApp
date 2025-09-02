@@ -14,10 +14,10 @@ import { destinations } from "../../data/destinations";
 import { router } from "expo-router";
 
 const Bookmarks = () => {
-  const { savetrips, setSavetrips } = useContext(travelsInfoContext);
+  const { savetripsId, setSavetripsId } = useContext(travelsInfoContext);
 
   const handleRemove = (id) => {
-    setSavetrips((prev) => prev.filter((ele) => ele !== id));
+    setSavetripsId((prev) => prev.filter((ele) => ele !== id));
   };
 
   const renderItem = ({ item }) => {
@@ -67,11 +67,11 @@ const Bookmarks = () => {
 
   return (
     <View style={styles.container}>
-      {savetrips.length === 0 ? (
+      {savetripsId.length === 0 ? (
         <Text style={styles.emptyText}>No bookmarks added yet ✨</Text>
       ) : (
         <FlatList
-          data={savetrips}
+          data={savetripsId}
           keyExtractor={(item) => item.toString()}
           renderItem={renderItem}
           showsVerticalScrollIndicator={false}
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 40,
     fontSize: 16,
-    color: Colors.gray,
+    color: Colors.black,
   },
   card: {
     flexDirection: "row",

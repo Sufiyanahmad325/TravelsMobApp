@@ -31,7 +31,7 @@ const EditProfile = () => {
       alert("Permission denied! You need to allow access to gallery.");
       return;
     }
-  
+
     // open gallery
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -39,7 +39,7 @@ const EditProfile = () => {
       aspect: [1, 1], // square crop
       quality: 1,
     });
-  
+
     if (!result.canceled) {
       console.log('this is your data ============> ' + result.assets[0].uri);
       // setProfileDetails(prev=>({...prev , avatar}));  // save image uri in state
@@ -55,20 +55,20 @@ const EditProfile = () => {
       alert("Permission denied! You need to allow access to camera.");
       return;
     }
-  
+
     // open camera
     let result = await ImagePicker.launchCameraAsync({
       allowsEditing: true,
       aspect: [1, 1], // square crop
       quality: 1,
     });
-  
+
     if (!result.canceled) {
       const uri = result.assets[0].uri;
       setAvatar(uri); // ✅ photo ko avatar state me save karo
     }
   };
-  
+
 
 
   return (
@@ -76,16 +76,17 @@ const EditProfile = () => {
       <Text style={styles.header}>Edit Profile</Text>
 
       {/* Avatar Preview */}
-    <View style={{ alignItems: "center", marginBottom: 20 }}>
-    <Image source={{ uri: avatar }} style={styles.avatar} />
-      {/* Pick Image Button */}
-      <TouchableOpacity onPress={pickImage} style={styles.pickBtn}>
-        <Text style={styles.pickBtnText}>Choose from Gallery</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={takePhoto} style={styles.pickBtn}>
-        <Text style={styles.pickBtnText}>Choose from camera</Text>
-      </TouchableOpacity>
-    </View>
+      <View style={{ alignItems: "center", marginBottom: 10 , gap:5 }}>
+        <Image source={{ uri: avatar }} style={styles.avatar} />
+        {/* Pick Image Button */}
+        <TouchableOpacity onPress={pickImage} style={styles.pickBtn}>
+          <Text style={styles.pickBtnText}>Choose from Gallery</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={takePhoto} style={styles.pickBtn}>
+          <Text style={styles.pickBtnText}>Choose from camera</Text>
+        </TouchableOpacity>
+      </View>
 
 
       {/* Avatar Input */}
@@ -117,7 +118,7 @@ const EditProfile = () => {
       />
 
       {/* Save Button */}
-      <TouchableOpacity  style={styles.saveBtn} onPress={handleSave}>
+      <TouchableOpacity style={styles.saveBtn} onPress={handleSave}>
         <Text style={styles.saveBtnText}>Save Changes</Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -137,7 +138,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginBottom: 20,
     color: Colors.primaryColor,
-    textAlign: "center",
   },
   avatar: {
     width: 100,
@@ -172,5 +172,10 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
+  },
+  pickBtn: {
+    backgroundColor: Colors.primaryColor,
+    padding: 8,
+    borderRadius: 8,
   },
 });

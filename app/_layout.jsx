@@ -17,17 +17,11 @@ export default function RootLayout() {
     bio: "🌍 Globe Trotter | 📸 Travel Blogger | ✈️ Adventure Seeker",
     avatar: "https://i.pravatar.cc/200?img=32",
   });
-
   const [saveTripsId, setSaveTripsId] = useState([]);
 
   
 
-  useEffect(() => {
-    const uniqueIds = savetripsId?.map(trip => trip.id)
-    setSaveTripsId(savetripsId)
-  }, [savetripsId])
-
-  console.log(saveTripsId)
+  
 
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({

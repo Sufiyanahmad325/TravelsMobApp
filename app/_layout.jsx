@@ -6,17 +6,28 @@ import { Feather, Ionicons } from "@expo/vector-icons";
 import "react-native-reanimated";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Colors } from "@/constants/Colors";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const travelsInfoContext = createContext();
 
 export default function RootLayout() {
-  const [savetrips, setSavetrips] = useState([]);
-  const [profileDetails , setProfileDetails] = useState({
+  const [savetripsId, setSavetripsId] = useState([]);
+  const [profileDetails, setProfileDetails] = useState({
     name: "John Traveler",
     bio: "🌍 Globe Trotter | 📸 Travel Blogger | ✈️ Adventure Seeker",
     avatar: "https://i.pravatar.cc/200?img=32",
   });
+
+  const [saveTripsId, setSaveTripsId] = useState([]);
+
+  
+
+  useEffect(() => {
+    const uniqueIds = savetripsId?.map(trip => trip.id)
+    setSaveTripsId(savetripsId)
+  }, [savetripsId])
+
+  console.log(saveTripsId)
 
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
@@ -26,7 +37,7 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
-    <travelsInfoContext.Provider value={{ savetrips, setSavetrips , profileDetails , setProfileDetails }}>
+    <travelsInfoContext.Provider value={{ savetripsId, setSavetripsId, profileDetails, setProfileDetails }}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -54,15 +65,17 @@ export default function RootLayout() {
 
                     {/* Save Button */}
                     <TouchableOpacity
-                      onPress={() => {
-                        if (parsedItem?.id) {
-                          setSavetrips((prev) => [...prev, parsedItem.id]);
+                      onPress={() => { 
+                        const isAllreadySaved = savetripsId?.find(id=>id == parsedItem.id)
+
+                        if(!isAllreadySaved){
+                          setSavetripsId(prev => [...prev, parsedItem.id])
                         }
-                      }}
+                       }}
                     >
                       <Ionicons
                         style={styles.bookmarkBtn}
-                        name="bookmark-outline"
+                        name={savetripsId?.find(id=>id == parsedItem.id) ? "bookmark" : "bookmark-outline"}
                         size={24}
                         color={Colors.black}
                       />

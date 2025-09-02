@@ -48,7 +48,26 @@ const EditProfile = () => {
   };
 
 
-
+  const takePhoto = async () => {
+    // permission for camera
+    const { status } = await ImagePicker.requestCameraPermissionsAsync();
+    if (status !== "granted") {
+      alert("Permission denied! You need to allow access to camera.");
+      return;
+    }
+  
+    // open camera
+    let result = await ImagePicker.launchCameraAsync({
+      allowsEditing: true,
+      aspect: [1, 1], // square crop
+      quality: 1,
+    });
+  
+    if (!result.canceled) {
+      const uri = result.assets[0].uri;
+      setAvatar(uri); // ✅ photo ko avatar state me save karo
+    }
+  };
   
 
 
@@ -62,6 +81,9 @@ const EditProfile = () => {
       {/* Pick Image Button */}
       <TouchableOpacity onPress={pickImage} style={styles.pickBtn}>
         <Text style={styles.pickBtnText}>Choose from Gallery</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={takePhoto} style={styles.pickBtn}>
+        <Text style={styles.pickBtnText}>Choose from camera</Text>
       </TouchableOpacity>
     </View>
 
